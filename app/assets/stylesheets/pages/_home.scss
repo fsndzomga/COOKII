@@ -9,12 +9,12 @@ body {
     padding-top: 130px;
   }
 
-  a {
+  .btn-cta {
     background-color: $cooki-orange;
     border-radius: 5px;
     padding: 12px;
     text-decoration: none;
-    font-family: $header-font;
+    font-family: $headers-font;
     font-size: 24px;
     color: white;
   }
