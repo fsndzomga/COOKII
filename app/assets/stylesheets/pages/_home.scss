@@ -1,1 +1,21 @@
 // Specific CSS for your home-page
+body {
+  background-color: $pale-dogwood;
+  margin: 0;
+  padding: 0;
+
+  h1 {
+    color: $cooki-orange;
+    padding-top: 130px;
+  }
+
+  .btn-cta {
+    background-color: $cooki-orange;
+    border-radius: 5px;
+    padding: 12px;
+    text-decoration: none;
+    font-family: $headers-font;
+    font-size: 24px;
+    color: white;
+  }
+}
