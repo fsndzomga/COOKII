@@ -1,0 +1,29 @@
+.btn-sign-up {
+  background-color: $burnt-sienna;
+  border-radius: 5px;
+  color: $white;
+  padding: 8px 24px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  margin-right: 3px
+}
+
+.btn-sign-up:hover {
+  background-color: $flame;
+  color: $white;
+}
+
+
+.btn-log-in {
+  background-color: $buff;
+  border-radius: 5px;
+  color: $white;
+  padding: 8px 24px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-log-in:hover {
+  background-color: $flame;
+  color: $white;
+}
