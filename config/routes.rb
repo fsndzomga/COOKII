@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :meals do
-    resources :bookings, only: %i[new create]
+    resources :bookings, only: %i[new create] # A-t-on besoin d'une show pour un booking?
   end
 
-  resources :bookings, only: %i[index update]
+  resources :bookings, only: %i[index edit update]
 end

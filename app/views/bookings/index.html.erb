@@ -1,0 +1,13 @@
+<h1>All your Bookings</h1>
+
+<ul>
+<% @bookings.each do |booking| %>
+<li>**********************</li>
+<li>Date : <%= booking.date %></li>
+<li>Number of people : <%= booking.number_of_people %></li>
+<li>Meal : <%= booking.meal.name %></li>
+<li>Prepared for : <%= booking.user.first_name %></li>
+<li> Confirmed : <%= booking.status %></li>
+<%= link_to "Edit Booking" , edit_booking_path(booking)  %>
+<% end %>
+</ul>
