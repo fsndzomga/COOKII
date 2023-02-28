@@ -1,0 +1,16 @@
+<h1>Edit Booking</h1>
+
+<%if current_user == @booking.user%>
+  <%= simple_form_for [@booking] do |f| %>
+    <%= f.input :date %>
+    <%= f.input :number_of_people %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+<% elsif current_user == @booking.meal.user %>
+  <%= simple_form_for [@booking] do |f| %>
+    <%= f.input :status, collection: %w[confirmed declined] %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+<% end %>
+
+<%= link_to 'Back to my bookings', bookings_path %>

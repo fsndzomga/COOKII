@@ -3,13 +3,11 @@
 <ul>
 <% @bookings.each do |booking| %>
 <li>**********************</li>
-<li><%= booking.date %></li>
-<li><%= booking.number_of_persons %></li>
-<li><%= booking.meal.name %></li>
-<li><%= booking.meal.description %></li>
-<li><%= booking.user.first_name %></li>
-<li><%= booking.user.last_name %></li>
-<li><%= booking.user.last_name %></li>
-<li> Confirmed : <%= booking.confirmed %></li>
+<li>Date : <%= booking.date %></li>
+<li>Number of people : <%= booking.number_of_people %></li>
+<li>Meal : <%= booking.meal.name %></li>
+<li>Prepared for : <%= booking.user.first_name %></li>
+<li> Confirmed : <%= booking.status %></li>
+<%= link_to "Edit Booking" , edit_booking_path(booking)  %>
 <% end %>
 </ul>

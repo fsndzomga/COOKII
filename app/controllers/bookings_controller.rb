@@ -1,19 +1,20 @@
 class BookingsController < ApplicationController
-  def new
-    @meal = Meal.find(params[:meal_id]) # pourquoi ca ne fonctionne pas ?
-    @booking = Booking.new
-  end
 
   def index
     @bookings = Booking.all
   end
 
+  def new
+    @meal = Meal.find(params[:meal_id])
+    @booking = Booking.new
+  end
+
   def create
     @meal = Meal.find(params[:meal_id])
-    @user_id = User.find(params[:current_user_id]) # vérifier ???
+    @user = current_user # vérifier ???
     @booking = Booking.new(booking_params)
+    @booking.user = @user
     @booking.meal = @meal
-    @booking.user_id = @user_id
     if @booking.save
       redirect_to bookings_path
     else
@@ -21,12 +22,19 @@ class BookingsController < ApplicationController
     end
   end
 
-  # def updated
-  # end
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    redirect_to bookings_path
+  end
 
   private
 
   def booking_params
-    params.require(:bookings).permit(:date, :number_of_persons)
+    params.require(:booking).permit(:date, :number_of_people, :status)
   end
 end
