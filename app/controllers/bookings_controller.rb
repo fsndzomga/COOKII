@@ -4,6 +4,10 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   def new
     @meal = Meal.find(params[:meal_id])
     @booking = Booking.new
