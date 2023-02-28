@@ -1,7 +1,8 @@
 <%= simple_form_for meal, html: { class: 'form-horizontal' } do |f| %>
   <%= f.input :name, label: "name", placeholder: "Enter a name for your meal" %>
   <%= f.input :description, label: "description", placeholder: "Enter a description for your meal" %>
-  <%= f.check_box :vegetarian, label: "vegetarian"%>
+  <label for="vegetarian">Vegetarian:</label>
+  <%= f.check_box :vegetarian, id: "vegetarian", label: "vegetarian" %>
   <%= f.input :category, label: "category", placeholder: "Enter a category" %>
   <%= f.input :price_per_person, label: "price per person", placeholder: "Enter a price per person" %>
   <%= f.input :max_person, label: "capacity", placeholder: "Enter the capacity" %>

@@ -15,6 +15,8 @@ class MealsController < ApplicationController
   def create
     @meal = Meal.new(meal_params)
 
+    @meal.user = current_user
+
     if @meal.save
       redirect_to meal_path(@meal), notice: 'Meal was successfully created'
     else
