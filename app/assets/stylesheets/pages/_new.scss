@@ -2,6 +2,10 @@
   color: $cooki-orange;
 }
 
-.form-group > button {
+.btn-submit {
   background-color: $cooki-orange;
+  border-radius: 5px;
+  padding: 12px;
+  font-family: $headers-font;
+  color: white;
 }
