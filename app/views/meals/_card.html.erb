@@ -15,11 +15,12 @@
         </div>
         <% if policy(meal).edit? %>
         <%= link_to "Edit", edit_meal_path(meal), class: 'btn btn-primary' %>
+        <%= link_to "Details", meal_path(meal), class: 'btn btn-primary' %>
         <%= link_to "Delete", meal, class: 'btn btn-danger', data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
         <% end %>
       </div>
       <% unless policy(meal).edit? %>
-      <a href="<%= new_meal_booking_path(@meal) %>" class="card-button"> Book </a>
+      <a href="<%= new_meal_booking_path(meal) %>" class="card-button"> Book </a>
       <% end %>
     </div>
 </div>
