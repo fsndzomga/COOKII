@@ -7,17 +7,19 @@ class MealsController < ApplicationController
   end
 
   def show
+    authorize @meal
   end
 
   def new
     @meal = Meal.new
+    authorize @meal
   end
 
   def create
     @meal = Meal.new(meal_params)
 
     @meal.user = current_user
-
+    authorize @meal
     if @meal.save
       redirect_to meal_path(@meal), notice: 'Meal was successfully created'
     else
@@ -26,9 +28,11 @@ class MealsController < ApplicationController
   end
 
   def edit
+    authorize @meal
   end
 
   def update
+    authorize @meal
     if @meal.update(meal_params)
       redirect_to meal_path(@meal), notice: 'Meal was successfully updated'
     else
@@ -37,6 +41,7 @@ class MealsController < ApplicationController
   end
 
   def destroy
+    authorize @meal
     @meal.destroy
 
     redirect_to root_path, status: :see_other
