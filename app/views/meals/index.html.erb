@@ -14,9 +14,7 @@
           <p class="card-text"><%= meal.max_person %></p>
           <% if policy(meal).edit? %>
           <%= link_to "Edit", edit_meal_path(meal), class: 'btn btn-primary' %>
-
           <%= link_to "Details", meal_path(meal), class: 'btn btn-primary' %>
-          
           <%= link_to "Delete", meal, class: 'btn btn-danger', data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
           <% end %>
         </div>
