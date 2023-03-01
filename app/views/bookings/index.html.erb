@@ -1,14 +1,37 @@
 <h1>All your Bookings</h1>
 
+<h2>Bookings I made</h2>
+
 <ul>
 <% @bookings.each do |booking| %>
-<li>**********************</li>
-<li>Date : <%= booking.date %></li>
-<li>Number of people : <%= booking.number_of_people %></li>
-<li>Meal : <%= booking.meal.name %></li>
-<li>Prepared for : <%= booking.user.first_name %></li>
-<li> Confirmed : <%= booking.status %></li>
-<%= link_to "Edit Booking" , edit_booking_path(booking)  %>
-<%= link_to "Delete Booking", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?"}%>
+  <% if booking.user == current_user %>
+    <li>**********************</li>
+    <li>Date : <%= booking.date %></li>
+    <li>Number of people : <%= booking.number_of_people %></li>
+    <li>Meal : <%= booking.meal.name %></li>
+    <li>Prepared for : <%= booking.user.email %></li>
+    <li>Prepared by : <%= booking.meal.user.email %></li>
+    <li> Confirmed : <%= booking.status %></li>
+    <%= link_to "Edit Booking" , edit_booking_path(booking)  %>
+    <%= link_to "Delete Booking", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?"}%>
+  <% end %>
+<% end %>
+</ul>
+
+
+<h2>Bookings I received</h2>
+<ul>
+<% @bookings.each do |booking| %>
+  <% if booking.meal.user == current_user %>
+    <li>**********************</li>
+    <li>Date : <%= booking.date %></li>
+    <li>Number of people : <%= booking.number_of_people %></li>
+    <li>Meal : <%= booking.meal.name %></li>
+    <li>Prepared for : <%= booking.user.email %></li>
+    <li>Prepared by : <%= booking.meal.user.email %></li>
+    <li> Confirmed : <%= booking.status %></li>
+    <%= link_to "Edit Booking" , edit_booking_path(booking)  %>
+    <%= link_to "Delete Booking", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?"}%>
+  <% end %>
 <% end %>
 </ul>

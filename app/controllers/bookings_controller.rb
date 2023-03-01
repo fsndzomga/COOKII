@@ -1,12 +1,17 @@
 class BookingsController < ApplicationController
-
   def index
     @bookings = Booking.all
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def new
     @meal = Meal.find(params[:meal_id])
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
@@ -15,6 +20,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = @user
     @booking.meal = @meal
+    authorize @booking
     if @booking.save
       redirect_to bookings_path
     else
@@ -24,10 +30,12 @@ class BookingsController < ApplicationController
 
   def edit
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def update
     @booking = Booking.find(params[:id])
+    authorize @booking
     @booking.update(booking_params)
     redirect_to bookings_path
   end

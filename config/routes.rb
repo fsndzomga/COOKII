@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[new create] # A-t-on besoin d'une show pour un booking?
   end
 
-  resources :bookings, only: %i[index edit update]
+  resources :bookings, only: %i[show index edit update]
 end
