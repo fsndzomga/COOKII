@@ -6,7 +6,7 @@ Meal.destroy_all
 User.destroy_all
 
 puts 'Creating user and meals...'
-15.times do
+5.times do
   user = User.new(
     email: Faker::Internet.free_email,
     first_name: Faker::Name.first_name,
@@ -26,5 +26,6 @@ puts 'Creating user and meals...'
     user: user
   )
   meal.save!
+  puts "1 meal created"
 end
 puts 'Finished!'

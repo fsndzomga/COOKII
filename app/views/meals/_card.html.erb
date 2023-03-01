@@ -1,6 +1,6 @@
 <div class="col-sm-4">
     <div class="card-product">
-      <img src="https://www.allrecipes.com/thmb/fQVetUxt58R3lLmsWjAxpACG7h8=/364x242/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/4470536-chef-johns-fresh-salmon-cakes-Chef-John-1x1-1-217fa762bb5c4d098ee1cb0044994758.jpg" />
+      <%= cl_image_tag(meal.photo.key) %>
       <div class="card-details">
       <div class="title d-flex justify-content-between align-items-center mt-4">
         <h4 class=""> <%= meal.name %> <h4>
