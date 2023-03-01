@@ -31,9 +31,11 @@
     color: #0e192f;
   }
 
-  h4 {
-    text-align: left;
+  .title-link {
     color: $flame;
+    font-family: $headers-font;
+    font-size: 24px;
+    margin-bottom: 5px;
   }
 
   .category {
