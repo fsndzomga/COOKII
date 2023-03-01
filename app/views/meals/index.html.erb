@@ -1,26 +1,11 @@
+<div class="container p-5">
+
 <h1>All Meals</h1>
 
-
- <div class="row">
+<div class="row">
   <% @meals.each do |meal| %>
-    <div class="col-sm-4">
-      <div class="card mb-3">
-        <img src="https://www.allrecipes.com/thmb/fQVetUxt58R3lLmsWjAxpACG7h8=/364x242/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/4470536-chef-johns-fresh-salmon-cakes-Chef-John-1x1-1-217fa762bb5c4d098ee1cb0044994758.jpg" style="width: 100%; height: 250px; object-fit: cover; object-position: top;", class="card-img-top" alt="<%= meal.name %> poster">
-        <div class="card-body">
-          <h5 class="card-title"><%= meal.name %></h5>
-          <p class="card-text"><%= truncate(meal.description, length: 100) %></p>
-          <p class="card-text"><%= meal.category %></p>
-          <p class="card-text"><%= meal.price_per_person %></p>
-          <p class="card-text"><%= meal.max_person %></p>
-          <% if policy(meal).edit? %>
-          <%= link_to "Edit", edit_meal_path(meal), class: 'btn btn-primary' %>
-
-          <%= link_to "Details", meal_path(meal), class: 'btn btn-primary' %>
-          
-          <%= link_to "Delete", meal, class: 'btn btn-danger', data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-          <% end %>
-        </div>
-      </div>
-    </div>
+    <%= render "card", meal: meal %>
   <% end %>
+</div>
+
 </div>
