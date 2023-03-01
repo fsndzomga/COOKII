@@ -6,7 +6,7 @@ class Meal < ApplicationRecord
 
   def attach_photo
     return if photo.attached?
-    self.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/cook.jpeg')), filename: 'cook')
+    self.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/cook.jpg')), filename: 'cook')
   end
 
 end
