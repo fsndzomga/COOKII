@@ -10,10 +10,14 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
+
           <% if user_signed_in? %>
-          <li class="me-2">
-          <p>Hello <%= current_user.first_name %> !</p>
+            <li class="me-2">
+            <p>Hello <%= current_user.first_name %> !</p>
           <% end %>
+          </li>
+          <li class="">
+            <a class="btn-sign-up" href="<%= bookings_path %>">My Bookings</a>
           </li>
           <li class="">
             <a class="btn-sign-up me-2" href="<%= new_user_registration_path %>">SIGN UP</a>
