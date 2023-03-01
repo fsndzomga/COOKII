@@ -20,7 +20,7 @@ class MealsController < ApplicationController
     @meal.user = current_user
     authorize @meal
     if @meal.save
-      redirect_to meal_path(@meal), notice: 'Meal was successfully created'
+      redirect_to meals_path, notice: 'Meal was successfully created'
     else
       render :new, status: :unprocessable_entity
     end
