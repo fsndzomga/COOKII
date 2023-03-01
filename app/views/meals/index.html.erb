@@ -1,11 +1,15 @@
 <div class="container p-5">
 
-<h1>All Meals</h1>
+  <h1>My Meals</h1>
+  <div class="row">
+    <% @meals.each do |meal| %>
+      <% if meal.user == current_user %>
+        <%= render "card", meal: meal %>
+      <% end %>
+    <% end %>
+  </div>
 
-<div class="row">
-  <% @meals.each do |meal| %>
-    <%= render "card", meal: meal %>
-  <% end %>
-</div>
+  <h1>All Meals</h1>
+
 
 </div>
