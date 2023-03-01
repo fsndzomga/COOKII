@@ -2,21 +2,20 @@
     <div class="card mb-3", style="border-radius: 24px;">
       <img src="https://www.allrecipes.com/thmb/fQVetUxt58R3lLmsWjAxpACG7h8=/364x242/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/4470536-chef-johns-fresh-salmon-cakes-Chef-John-1x1-1-217fa762bb5c4d098ee1cb0044994758.jpg" style="width: 100%; height: 250px; object-fit: cover; object-position: top; border-top-left-radius: 24px; border-top-right-radius: 24px;", class="card-img-top" alt="<%= meal.name %> poster">
       <div class="card-body border-0">
-        <h4 class="card-title"><%= meal.name %></h4>
-        <p class="card-text"><%= truncate(meal.description, length: 62) %></p>
-
-        <p class="card-text font-italic"><%= meal.category %></p>
-
+        <div class="d-flex justify-content-between mb-1">
+          <h4 class="card-title me-auto py-2"><%= meal.name %></h4>
+          <% if meal.user == current_user %>
+            <%= link_to ('<i class="fa-regular fa-pen-to-square"></i>').html_safe, edit_meal_path(meal), class: 'text-secondary fs-4 p-2' %>
+            <%= link_to ('<i class="fa-regular fa-trash-can"></i>').html_safe, meal_path(meal), class: 'text-danger fs-4 p-2', data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+          <% end %>
+        </div>
+        <p class="card-text"><%= truncate(meal.description, length: 62) %>  <%= link_to "See more", meal_path(meal), class:"fst-italic text-warning"%></p>
+        <p class="card-text fst-italic"><%= meal.category %></p>
         <div class="d-flex justify-content-between">
-
-        <p class="card-text">€ <%= meal.price_per_person %> per person</p>
-        <p class="card-text"><%= meal.max_person %> <i class="fa-solid fa-person"></i></p>
-
+          <p class="card-text">€<%= meal.price_per_person %> per person</p>
+          <p class="card-text"><%= meal.max_person %> <i class="fa-solid fa-person"></i></p>
         </div>
         <% if policy(meal).edit? %>
-        <%= link_to "Edit", edit_meal_path(meal), class: 'btn btn-primary' %>
-        <%= link_to "Details", meal_path(meal), class: 'btn btn-primary' %>
-        <%= link_to "Delete", meal, class: 'btn btn-danger', data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
         <% end %>
       </div>
       <% unless policy(meal).edit? %>

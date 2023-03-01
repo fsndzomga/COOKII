@@ -17,7 +17,6 @@ class MealsController < ApplicationController
 
   def create
     @meal = Meal.new(meal_params)
-
     @meal.user = current_user
     authorize @meal
     if @meal.save
