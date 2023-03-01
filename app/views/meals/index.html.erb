@@ -1,15 +1,6 @@
 <div class="container p-3">
   <%= link_to "Create a new Meal", new_meal_path, class:"btn-sign-up" %>
   <div class="container mt-3">
-    <h2>My Meals</h2>
-    <div class="row">
-      <% @meals.each do |meal| %>
-        <% if meal.user == current_user %>
-          <%= render "card", meal: meal %>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
   <h2>All Meals</h2>
     <div class="container">
       <div class="row">
