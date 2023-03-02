@@ -1,8 +1,20 @@
-// Smallest device
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  margin-top: 40px;
+}
+
+// class pour All meal et avoir le bouton create à coté
+.all-meals {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.index-title {
+  padding: 0px;
+  margin: 0px;
 }
 
 // Smallest device
