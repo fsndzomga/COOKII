@@ -46,3 +46,8 @@ background-color: #DB815Aff;
     text-decoration: none;
     transition: background 0.3s
 }
+
+.btn-create-meal:hover {
+  background-color: $flame;
+  color: $white;
+}
