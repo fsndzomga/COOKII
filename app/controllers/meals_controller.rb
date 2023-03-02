@@ -4,7 +4,11 @@ class MealsController < ApplicationController
   before_action :set_meal, only: %i[show edit update destroy]
 
   def index
-    @meals = Meal.all
+    if params[:query].present?
+      @meals = Meal.search_in_meal(params[:query])
+    else
+      @meals = Meal.all
+    end
   end
 
   def map

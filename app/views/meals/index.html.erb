@@ -1,4 +1,9 @@
-<div id="index-container" class="container p-3">
+<div class="container p-3">
+
+  <%# Search bar Partial %>
+  <%= render "search_bar", meal: @meal %>
+  <%# **** %>
+
   <%= link_to "Create a new Meal", new_meal_path, class:"btn-sign-up" %>
   <div class="container mt-3">
   <h2>All Meals</h2>
