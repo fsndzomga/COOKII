@@ -14,28 +14,26 @@
         </div>
       </div>
         <div class="confirmed col-4 px-2">
-        <h3 class="text-center">Confirmed Orders : <%= @bookings.where(status: "confirmed").count %> </h3>
-        <div class="row">
-          <% @bookings.each do |booking| %>
-            <% if booking.status == "confirmed" %>
-              <%= render "bookings/card", booking: booking %>
+          <h3 class="text-center">Confirmed Orders : <%= @bookings.where(status: "confirmed").count %> </h3>
+          <div class="row">
+            <% @bookings.each do |booking| %>
+              <% if booking.status == "confirmed" %>
+                <%= render "bookings/card", booking: booking %>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
+        </div>
+      <div class="past col-4 px-2">
+        <h3 class="text-center">Past Orders : <%= @bookings.where('date > ?', DateTime.now).count %> </h3>
+        <div class="row">
+            <% @bookings.each do |booking| %>
+              <% if booking.date < DateTime.now %>
+                <%= render "bookings/card", booking: booking %>
+              <% end %>
+            <% end %>
         </div>
       </div>
-      <div class="past col-4 px-2">
-      <h3 class="text-center">Past Orders : <%= @bookings.where('date > ?', DateTime.now).count %> </h3>
-      <div class="row">
-          <% @bookings.each do |booking| %>
-            <% if booking.date < DateTime.now %>
-              <%= render "bookings/card", booking: booking %>
-            <% end %>
-          <% end %>
-      </div>
     </div>
-
-    </div>
-
     <div class="col-12">
       <div class="d-flex justify-content-between align-items-center col-4">
         <h2>My Meals</h2>
