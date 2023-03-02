@@ -4,9 +4,8 @@
   bottom: 0;
   background-color: $light-gray;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  margin-top: 80px;
   padding: 0px 40px;
   position: fixed;
 }
@@ -38,4 +37,10 @@
 .footer a {
   text-decoration: none;
   color: $orange;
+}
+
+@media(max-width: 950px) {
+  .footer-item:nth-child(2) {
+    display: none;
+  }
 }
