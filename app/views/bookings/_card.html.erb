@@ -1,4 +1,4 @@
-<div class="col-sm-4">
+<div class="col-12">
     <div class="card-product">
       <div class="card-details">
       <div class="title d-flex justify-content-between align-items-center mt-4">
@@ -14,6 +14,12 @@
         <p>Total price : <%= booking.number_of_people * booking.meal.price_per_person %> €</p>
         <p><%= booking.number_of_people %> <i class="fa-solid fa-person"></i></p>
         <p>Status : <%= booking.status %></p>
+      </div>
+      <div class="d-flex">
+      <%= link_to ('<i class="fa-solid fa-thumbs-down"></i>').html_safe, decline_booking_path(booking), class: 'text-danger fs-4 p-2', data: { turbo_method: :patch } %>
+      <% if booking.status != "confirmed" %>
+        <%= link_to ('<i class="fa-solid fa-thumbs-up"></i>').html_safe, confirm_booking_path(booking), class: 'text-success fs-4 p-2', data: { turbo_method: :patch } %>
+      <% end %>
       </div>
     </div>
 </div>
