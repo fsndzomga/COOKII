@@ -1,18 +1,25 @@
 <div class="container">
-<h1>My Kitchen</h1>
-  <div class="container mt-3">
-    <div class="stats card rounded p-2">
-      <p>Pending Orders :</p>
-      <p>Confirmed Orders :</p>
-      <p>Past Orders : </p>
-    </div>
-    <h2>My Meals</h2>
-    <div class="row">
-      <% @meals.each do |meal| %>
-        <% if meal.user == current_user %>
-          <%= render "meals/card", meal: meal %>
+  <h1 class="title-dashboard">My Kitchen</h1>
+    <%# <div class="container"> %>
+      <h2 class="mt-5 mb-4">My Stats</h2>
+      <div class="cards-stats">
+        <div class="card-stats">
+          <p>Pending Orders</p>
+        </div>
+        <div class="card-stats">
+          <p>Confirmed Orders</p>
+        </div>
+        <div class="card-stats">
+          <p>Past Orders</p>
+        </div>
+      </div>
+      <h2 class="mt-5 mb-4">Meals I Offer</h2>
+      <div class="cards">
+        <% @meals.each do |meal| %>
+          <% if meal.user == current_user %>
+            <%= render "meals/card", meal: meal %>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
-  </div>
+      </div>
+    <%# </div> %>
 </div>

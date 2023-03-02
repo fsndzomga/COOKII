@@ -1,23 +1,12 @@
 <div class="container p-3">
-<h1>All my Bookings</h1>
-  <div class="container mt-3">
-    <h2>Meals I ordered</h2>
-    <div class="row">
-      <% @bookings.each do |booking| %>
-        <% if booking.user == current_user %>
-          <%= render "card", booking: booking %>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-  <h2>Meals I have to cook</h2>
-    <div class="container">
+  <h1>My Orders</h1>
+    <div class="container mt-3">
       <div class="row">
-          <% @bookings.each do |booking| %>
-            <% if booking.meal.user == current_user %>
-              <%= render "card", booking: booking %>
-            <% end %>
+        <% @bookings.each do |booking| %>
+          <% if booking.user == current_user %>
+            <%= render "card", booking: booking %>
           <% end %>
+        <% end %>
       </div>
     </div>
 </div>
