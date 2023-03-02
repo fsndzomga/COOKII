@@ -3,10 +3,10 @@
   <div class="container mt-3">
   <h2>All Meals</h2>
     <div class="container">
-      <div class="row">
+      <div class="cards">
           <% @meals.each do |meal| %>
             <% if meal.user != current_user %>
-              <%= render "card", meal: meal %>
+                <%= render "card", meal: meal %>
             <% end %>
           <% end %>
       </div>
