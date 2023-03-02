@@ -38,7 +38,7 @@ class MealsController < ApplicationController
     @meal.user = current_user
     authorize @meal
     if @meal.save
-      redirect_to meals_path, notice: 'Meal was successfully created'
+      redirect_to dashboard_path, notice: 'Meal was successfully created'
     else
       render :new, status: :unprocessable_entity
     end
@@ -61,7 +61,7 @@ class MealsController < ApplicationController
     authorize @meal
     @meal.destroy
 
-    redirect_to root_path, status: :see_other
+    redirect_to dashboard_path, status: :see_other
   end
 
   private
