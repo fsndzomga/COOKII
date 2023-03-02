@@ -1,5 +1,6 @@
 class MealsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[show index]
+  skip_before_action :authenticate_user!, only: %i[show index map]
+  before_action :skip_authorization, only: [:map]
   before_action :set_meal, only: %i[show edit update destroy]
 
   def index
@@ -7,6 +8,17 @@ class MealsController < ApplicationController
       @meals = Meal.search_in_meal(params[:query])
     else
       @meals = Meal.all
+    end
+  end
+
+  def map
+    @meals = Meal.all
+    @meals_users = @meals.map(&:user)
+    @markers = @meals_users.map do |meal_user|
+      {
+        lat: meal_user.geocode[0],
+        lng: meal_user.geocode[1]
+      }
     end
   end
 

@@ -7,7 +7,14 @@
   <%= link_to "Create a new Meal", new_meal_path, class:"btn-sign-up" %>
   <div class="container mt-3">
   <h2>All Meals</h2>
-    <div class="container">
+    <a id="map-button" href="<%=map_path%>" class="btn-sign-up d-flex align-items-center">
+
+      <p class="m-0">Show map</p>
+
+      <i class="fa-sharp fa-solid fa-map-location-dot m-1"></i>
+
+    </a>
+    <div class="container d-flex">
       <div class="cards">
           <% @meals.each do |meal| %>
             <% if meal.user != current_user %>
