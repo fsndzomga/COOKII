@@ -1,11 +1,11 @@
 .btn-sign-up {
-  background-color: $burnt-sienna;
-  border-radius: 5px;
-  color: $white;
-  padding: 8px 24px;
+  background-color: #DB815Aff;
+  border-radius: 26px;
+  color: #fff;
+  padding: 12px 45px;
   text-decoration: none;
   transition: background 0.3s ease;
-  margin-right: 3px
+  margin-right:3px;
 }
 
 .btn-sign-up:hover {
@@ -36,4 +36,13 @@
   text-decoration: none;
   transition: background 0.3s ease;
   margin-left: 10px;
+}
+
+.btn-create-meal {
+background-color: #DB815Aff;
+    border-radius: 26px;
+    color: #fff;
+    padding: 7px 32px;
+    text-decoration: none;
+    transition: background 0.3s
 }
