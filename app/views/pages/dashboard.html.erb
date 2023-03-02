@@ -1,18 +1,33 @@
 <div class="container">
-<h1>My Kitchen</h1>
-  <div class="container mt-3">
-    <div class="stats card rounded p-2">
-      <p>Pending Orders :</p>
-      <p>Confirmed Orders :</p>
-      <p>Past Orders : </p>
+  <h1 class="title-dashboard">My Kitchen</h1>
+  <h2 class="mt-5 mb-4">Meals I Must Prep</h2>
+  <div class="cards-orders">
+    <div class="card-orders">
+      <p class="card-status">Pending Orders: <%= @bookings.where(status: "pending").count %></p>
+        <% @bookings.each do |booking| %>
+            <% if booking.status == "pending" %>
+              <%= render "bookings/card", booking: booking %>
+            <% end %>
+          <% end %>
     </div>
-    <h2>My Meals</h2>
-    <div class="row">
+    <div class="card-orders">
+      <p class="card-status">Confirmed Orders: <%= @bookings.where(status: "confirmed").count %></p>
+      <% @bookings.each do |booking| %>
+              <% if booking.status == "confirmed" %>
+                <%= render "bookings/card", booking: booking %>
+              <% end %>
+            <% end %>
+    </div>
+  </div>
+  <div class="all-meals">
+    <h2 class="meal-title ">Meals I Offer</h2>
+    <%= link_to "+ Create a new meal", new_meal_path, class:"btn-create-meal" %>
+  </div>
+    <div class="cards mt-4">
       <% @meals.each do |meal| %>
         <% if meal.user == current_user %>
           <%= render "meals/card", meal: meal %>
         <% end %>
       <% end %>
     </div>
-  </div>
 </div>

@@ -1,8 +1,21 @@
-// Smallest device
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  margin-top: 40px;
+}
+
+// class pour All meal et avoir le bouton create à coté
+.all-meals {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.index-title {
+  padding: 0px;
+  margin: 0px;
 }
 
 // Smallest device
@@ -37,7 +50,7 @@
   }
 
   .card-product {
-    height: 630px;
+    height: 700px;
   }
 }
 
@@ -50,4 +63,14 @@
   .card-product {
     height: 630px;
   }
+}
+
+#map-button {
+  width: 157px;
+  padding: 10px;
+  justify-content: space-around;
+  border-radius: 25px;
+  position: fixed;
+  top: 91%;
+  left: 44.3vw;
 }

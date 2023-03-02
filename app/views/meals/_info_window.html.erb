@@ -1,0 +1,10 @@
+<div class="card-meal">
+  <%= cl_image_tag meal.photo.key, height: 100, width: 200, crop: :fill %>
+  <div class="card-meal-infos">
+    <div>
+      <h2><%= link_to meal.name, meal_path(meal), class: "title-link" %></h2>
+      <p class="category"> <%= meal.category %> </p>
+      <h6 class="card-meal-pricing">€ <%= meal.price_per_person %> per person</h6>
+    </div>
+  </div>
+</div>

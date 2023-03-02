@@ -10,7 +10,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @meals = Meal.where(user: current_user)
-    # @bookings = @meals.map { |meal| meal.bookings }
+    @bookings = Booking.joins(:meal).where(meal: { user_id: current_user })
   end
 
 end

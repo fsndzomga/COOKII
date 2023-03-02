@@ -1,5 +1,6 @@
 class MealsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[show index]
+  skip_before_action :authenticate_user!, only: %i[show index map]
+  before_action :skip_authorization, only: [:map]
   before_action :set_meal, only: %i[show edit update destroy]
 
   def index
@@ -7,6 +8,18 @@ class MealsController < ApplicationController
       @meals = Meal.search_in_meal(params[:query])
     else
       @meals = Meal.all
+    end
+  end
+
+  def map
+    @meals = Meal.all
+    @meals_users = @meals.map(&:user)
+    @markers = @meals_users.map do |meal_user|
+      {
+        lat: meal_user.geocode[0],
+        lng: meal_user.geocode[1],
+        info_window_html: render_to_string(partial: "info_window", locals: {meal: meal_user.meals.first})
+      }
     end
   end
 
@@ -25,7 +38,7 @@ class MealsController < ApplicationController
     @meal.user = current_user
     authorize @meal
     if @meal.save
-      redirect_to meals_path, notice: 'Meal was successfully created'
+      redirect_to dashboard_path, notice: 'Meal was successfully created'
     else
       render :new, status: :unprocessable_entity
     end
@@ -48,7 +61,7 @@ class MealsController < ApplicationController
     authorize @meal
     @meal.destroy
 
-    redirect_to root_path, status: :see_other
+    redirect_to dashboard_path, status: :see_other
   end
 
   private
