@@ -1,7 +1,6 @@
-<div class="col-12">
-    <div class="card-product">
+<div class="card-booked-orders">
       <div class="card-details">
-      <div class="title d-flex justify-content-between align-items-center mt-4">
+      <div class="title d-flex justify-content-between align-items-center">
         <h4 class="mt-3"><%= booking.meal.name %> <h4>
             <%= link_to ('<i class="fa-regular fa-pen-to-square"></i>').html_safe, edit_booking_path(booking), class: 'text-secondary fs-4 p-2' %>
         <% if booking.user == current_user %>
@@ -15,11 +14,12 @@
         <p><%= booking.number_of_people %> <i class="fa-solid fa-person"></i></p>
         <p>Status : <%= booking.status %></p>
       </div>
-      <div class="d-flex">
-      <%= link_to ('<i class="fa-solid fa-thumbs-down"></i>').html_safe, decline_booking_path(booking), class: 'text-danger fs-4 p-2', data: { turbo_method: :patch } %>
-      <% if booking.status != "confirmed" %>
-        <%= link_to ('<i class="fa-solid fa-thumbs-up"></i>').html_safe, confirm_booking_path(booking), class: 'text-success fs-4 p-2', data: { turbo_method: :patch } %>
+      <% if booking.meal.user == current_user %>
+        <div class="d-flex ps-4">
+          <%= link_to ('<i class="fa-solid fa-thumbs-down"></i>').html_safe, decline_booking_path(booking), class: 'text-danger fs-4 p-2', data: { turbo_method: :patch } %>
+          <% if booking.status != "confirmed" %>
+            <%= link_to ('<i class="fa-solid fa-thumbs-up"></i>').html_safe, confirm_booking_path(booking), class: 'text-success fs-4 p-2', data: { turbo_method: :patch } %>
+          <% end %>
+        </div>
       <% end %>
-      </div>
-    </div>
 </div>

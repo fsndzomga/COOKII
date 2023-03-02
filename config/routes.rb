@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   end
 
   get 'dashboard', to: "pages#dashboard"
+
+  get 'meals/index/map', to: "meals#map", as: :map
 end
