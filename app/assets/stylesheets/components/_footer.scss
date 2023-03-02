@@ -10,11 +10,6 @@
   position: fixed;
 }
 
-span {
-  font-size: 100px;
-  margin: 0px 30px;
-}
-
 .footer ul {
   padding: 0px;
 }
@@ -37,6 +32,11 @@ span {
 .footer a {
   text-decoration: none;
   color: $orange;
+}
+
+span {
+  font-size: 20px;
+  margin: 0px 30px;
 }
 
 @media(max-width: 950px) {
