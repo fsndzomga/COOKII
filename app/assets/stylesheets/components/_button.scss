@@ -26,3 +26,14 @@
   background-color: $flame;
   color: $white;
 }
+
+.btn-search {
+  background-color: $burnt-sienna;
+  border: none;
+  border-radius: 40px;
+  color: $white;
+  padding: 0px 40px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  margin-left: 10px;
+}

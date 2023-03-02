@@ -6,7 +6,12 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[new create] # A-t-on besoin d'une show pour un booking?
   end
 
-  resources :bookings, only: %i[show index edit update destroy]
+  resources :bookings, only: %i[show index edit update destroy] do
+    member do
+      patch 'confirm', to: "bookings#confirm"
+      patch 'decline', to: "bookings#decline"
+    end
+  end
 
   get 'dashboard', to: "pages#dashboard"
 end
