@@ -371,10 +371,11 @@ user16 = User.new(
 )
 user16.save!
 meal = Meal.new(
-  name: 'Greek Salad',
-  description: "La salade grecque ou salade crétoise est une recette de cuisine traditionnelle et emblématique de salade composée de la cuisine grecque, à base de tomate, concombre, huile d'olive, origan, feta, olives, oignon, poivron vert, et câpres.",
+  name: 'Quiches aux poireaux & saumon',
+  description: "Voici une quiche de gourmet, qui est une de mes préférées.
+  Avec au final des saveurs de gourmet, entre saumon, poireaux, avec des saveurs délicates et efficaces !",
   vegetarian: true,
-  category: 'Mediterranean',
+  category: 'European',
   price_per_person: rand(5..15),
   max_person: rand(1..8),
   user: user16
