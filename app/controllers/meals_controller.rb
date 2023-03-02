@@ -17,7 +17,8 @@ class MealsController < ApplicationController
     @markers = @meals_users.map do |meal_user|
       {
         lat: meal_user.geocode[0],
-        lng: meal_user.geocode[1]
+        lng: meal_user.geocode[1],
+        info_window_html: render_to_string(partial: "info_window", locals: {meal: meal_user.meals.first})
       }
     end
   end

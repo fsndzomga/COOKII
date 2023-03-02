@@ -1,0 +1,50 @@
+.card-meal {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-meal > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-meal h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  text-decoration: none;
+}
+
+
+
+.card-meal p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-meal .card-meal-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-meal-infos .card-meal-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.title-link {
+  color: $flame;
+  font-family: $headers-font;
+  font-size: 24px;
+  text-decoration: none;
+  // margin-bottom: 5px;
+}
