@@ -4,6 +4,13 @@ class MealsController < ApplicationController
 
   def index
     @meals = Meal.all
+    @meals_users = @meals.map(&:user)
+    @markers = @meals_users.map do |meal_user|
+      {
+        lat: meal_user.geocode[0],
+        lng: meal_user.geocode[1]
+      }
+    end
   end
 
   def show
