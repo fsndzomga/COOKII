@@ -10,17 +10,25 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-          <% if user_signed_in? %>
-          <li class="me-2">
-          <p>Hello <%= current_user.first_name %> !</p>
-          <% end %>
+          <li class="nav-item active">
+            <a class="nav-link" href="<%=root_path%>">Home</a>
           </li>
-          <li class="">
-            <a class="btn-sign-up me-2" href="<%= new_user_registration_path %>">SIGN UP</a>
+          <li class="nav-item">
+            <a class="nav-link" href="#">My Kitchen</a>
           </li>
-          <li class="">
-            <a class="btn-log-in" href="<%= user_session_path %>">LOG IN</a>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= bookings_path %>">My Orders</a>
           </li>
+          <li class="nav-item dropdown">
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://cdn-icons-png.flaticon.com/128/5816/5816593.png"/>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="<%= user_session_path %>">Log In</a>
+              <a class="dropdown-item" href="<%= new_user_registration_path %>">Sign up</a>
+              <a class="dropdown-item" data-turbo-method="delete" href="<%= destroy_user_session_path %>">Log out</a>
+            </div>
+          </li>
+          <!--li class="nav-item"-->
+          <!--/li-->
       </ul>
     </div>
   </div>

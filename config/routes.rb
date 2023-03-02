@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: %i[show index edit update destroy]
+
+  get 'dashboard', to: "pages#dashboard"
 end
