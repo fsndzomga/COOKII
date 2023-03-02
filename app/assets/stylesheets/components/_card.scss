@@ -1,10 +1,13 @@
 .card-product {
+  height: 630px;
   margin-bottom: 40px;
   border-radius: 24px;
   background-color: white;
   color: black;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
 
   img {
     height: 250px;
@@ -24,6 +27,9 @@
 
 .card-details {
   padding: 0 30px;
+  flex-grow: 1;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
 
   p {
     font-family: $body-font;
@@ -35,7 +41,7 @@
     color: $flame;
     font-family: $headers-font;
     font-size: 24px;
-    margin-bottom: 5px;
+    // margin-bottom: 5px;
   }
 
   .category {

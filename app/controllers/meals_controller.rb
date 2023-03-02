@@ -7,6 +7,7 @@ class MealsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     authorize @meal
   end
 
