@@ -1,8 +1,13 @@
 class MealsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[show index]
+  skip_before_action :authenticate_user!, only: %i[show index map]
+  before_action :skip_authorization, only: [:map]
   before_action :set_meal, only: %i[show edit update destroy]
 
   def index
+    @meals = Meal.all
+  end
+
+  def map
     @meals = Meal.all
     @meals_users = @meals.map(&:user)
     @markers = @meals_users.map do |meal_user|

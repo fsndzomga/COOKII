@@ -1,19 +1,21 @@
-<div class="container p-3">
+<div id="index-container" class="container p-3">
   <%= link_to "Create a new Meal", new_meal_path, class:"btn-sign-up" %>
   <div class="container mt-3">
   <h2>All Meals</h2>
-    <div class="container">
+    <a id="map-button" href="<%=map_path%>" class="btn-sign-up d-flex align-items-center">
+
+      <p class="m-0">Show map</p>
+
+      <i class="fa-sharp fa-solid fa-map-location-dot m-1"></i>
+
+    </a>
+    <div class="container d-flex">
       <div class="cards">
           <% @meals.each do |meal| %>
             <% if meal.user != current_user %>
                 <%= render "card", meal: meal %>
             <% end %>
           <% end %>
-      </div>
-      <div style="width: 100%; height: 600px;"
-        data-controller="map"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
 </div>

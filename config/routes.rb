@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :bookings, only: %i[show index edit update destroy]
 
   get 'dashboard', to: "pages#dashboard"
+
+  get 'meals/index/map', to: "meals#map", as: :map
 end
