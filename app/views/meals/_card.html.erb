@@ -2,7 +2,7 @@
     <div class="card-product">
       <%= cl_image_tag meal.photo.key, height: 300, width: 400, crop: :fill %>
       <div class="card-details">
-      <div class="title d-flex justify-content-between align-items-center my-4">
+      <div class="title d-flex justify-content-between align-items-center mt-4 mb-2">
         <%= link_to meal.name, meal_path(meal), class: "title-link" %>
         <% if user_signed_in? %>
           <%= link_to ('Book').html_safe, meal_path(meal), class: 'btn-book' %>
@@ -13,6 +13,7 @@
           <% end %>
         <% end %>
       </div>
+        <p class="category"><%= meal.user.address %> </p>
         <p class="description"> <%= meal.description %> </p>
         <p class="category"> <%= meal.category %> </p>
       </div>
