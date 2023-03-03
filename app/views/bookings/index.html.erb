@@ -1,7 +1,7 @@
 <div class="container p-3">
   <h1 class="title-show">My Orders</h1>
     <div class="container mt-3">
-      <div class="row">
+      <div class="booked-orders row">
         <% @bookings.each do |booking| %>
           <% if booking.user == current_user %>
             <%= render "card", booking: booking %>
