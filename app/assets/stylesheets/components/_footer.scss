@@ -4,14 +4,9 @@
   bottom: 0;
   background-color: $light-gray;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  margin-top: 80px;
   padding: 0px 40px;
-}
-
-.span {
-  font-size: 100px;
 }
 
 .footer ul {
@@ -22,7 +17,6 @@
   list-style: none;
   margin: 0px
 }
-
 
 .list-inline li {
   display : inline-block;
@@ -37,4 +31,15 @@
 .footer a {
   text-decoration: none;
   color: $orange;
+}
+
+span {
+  font-size: 20px;
+  margin: 0px 30px;
+}
+
+@media(max-width: 950px) {
+  .footer-item:nth-child(2) {
+    display: none;
+  }
 }
