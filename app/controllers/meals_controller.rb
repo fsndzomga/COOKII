@@ -12,7 +12,7 @@ class MealsController < ApplicationController
   end
 
   def map
-    @meals = Meal.all
+    @meals = Meal.where.not(user: current_user)
     @meals_users = @meals.map(&:user)
     @markers = @meals_users.map do |meal_user|
       {
