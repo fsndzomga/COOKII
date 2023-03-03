@@ -5,7 +5,7 @@
   <%= f.check_box :vegetarian, id: "Vegetarian" %>
   <%= f.input :category, as: :select, collection: Meal::CATEGORIES %>
   <%= f.input :price_per_person, label: "Price per person", placeholder: "Enter a price per person" %>
-  <%= f.input :max_person, label: "Max Number of servings", placeholder: "Enter the number of servings" %>
+  <%= f.input :max_person, label: "Max. number of servings", placeholder: "Enter the number of max. servings you can prepare" %>
   <%= f.input :photo, as: :file %>
   <div class="form-group">
     <%= f.button :submit, class: "btn-submit" %>

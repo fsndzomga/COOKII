@@ -4,6 +4,7 @@ class Meal < ApplicationRecord
   has_one_attached :photo
   before_save :attach_photo
   validates :name, :price_per_person, :max_person, presence: true
+  validates :description, length: { maximum: 310 }
   validates :category, inclusion: { in: CATEGORIES }
 
   # Search Bar
