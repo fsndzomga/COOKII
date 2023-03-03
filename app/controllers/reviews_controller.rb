@@ -35,7 +35,8 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to @review, notice: 'Review was successfully created.'
     else
-      render :new, status: :unprocessable_entity
+      flash[:alert] = "Something went wrong."
+      render :new
     end
   end
 

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       patch 'confirm', to: "bookings#confirm"
       patch 'decline', to: "bookings#decline"
     end
+    resources :reviews, only: %i[new create]
   end
 
   get 'dashboard', to: "pages#dashboard"
