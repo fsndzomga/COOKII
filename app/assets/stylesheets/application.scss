@@ -10,7 +10,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "components/info_window"
+@import "components/info_window";
+@import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
+@import "components/_address_autocomplete";
 
 // .card-button {
 //   display: flex;
