@@ -13,6 +13,7 @@
         <p>Total price : <%= booking.number_of_people * booking.meal.price_per_person %> €</p>
         <p><%= booking.number_of_people %> <i class="fa-solid fa-person"></i></p>
         <p>Status : <%= booking.status %></p>
+        <%= link_to "Add a review", new_booking_review_path(booking), class:"btn-create-meal p-2 m-2;" %>
       </div>
       <% if booking.meal.user == current_user %>
         <div class="d-flex ps-4">
