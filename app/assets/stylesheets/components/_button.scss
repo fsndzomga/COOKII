@@ -51,3 +51,17 @@ background-color: #DB815Aff;
   background-color: $flame;
   color: $white;
 }
+
+.btn-book {
+  border-radius: 26px;
+  border: solid #DB815Aff;
+  color: #DB815Aff;
+  padding: 2px 16px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-book:hover {
+background-color: $flame;
+color: $white;
+}

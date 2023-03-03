@@ -10,11 +10,14 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-          <%# Incone loupe / magnifying-glass%>
+          <% if user_signed_in? %>
+            <li>
+              <a class="nav-link text-dark" href="#">Hello <%= current_user.first_name %> !</a>
+            </li>
+          <% end  %>
           <li>
             <a class="nav-link" href="<%= meals_path %>"><i class="fa-solid fa-magnifying-glass"></i></a>
           </li>
-          <%# ************* %>
           <li class="nav-item active">
             <a class="nav-link" href="<%=root_path%>">Home</a>
           </li>

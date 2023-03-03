@@ -1,5 +1,7 @@
   <%# Searchbar form partial %>
-  <%= form_with url: meals_path, method: :get, class: "d-flex py-5 justify-content-between" do %>
+
+<div class="d-flex justify-content-center">
+  <%= form_with url: meals_path, method: :get, class: "d-flex py-5 col-8" do %>
     <%= text_field_tag :query,
       params[:query],
       class: "form-control rounded-pill",
@@ -7,4 +9,5 @@
     %>
     <%= submit_tag "Find a meal", class:"btn-search" %>
   <% end %>
+</div>
   <%# **** %>
