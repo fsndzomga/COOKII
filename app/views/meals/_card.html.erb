@@ -5,6 +5,8 @@
       <div class="title d-flex justify-content-between align-items-center my-4">
         <%= link_to meal.name, meal_path(meal), class: "title-link" %>
         <% if user_signed_in? %>
+          <%= link_to ('Book').html_safe, meal_path(meal), class: 'btn-book' %>
+
           <% if meal.user == current_user || current_user.admin? %>
               <%= link_to ('<i class="fa-regular fa-pen-to-square"></i>').html_safe, edit_meal_path(meal), class: 'text-secondary fs-4 p-2' %>
               <%= link_to ('<i class="fa-regular fa-trash-can"></i>').html_safe, meal_path(meal), class: 'text-danger fs-4 p-2', data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
