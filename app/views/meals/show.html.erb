@@ -2,12 +2,12 @@
   <h1 class="title-show">Details Of The Meal</h1>
 
   <div class="cards-booking">
-      <%= render "card", meal: @meal %>
+      <%= render "meals/card", meal: @meal %>
         <div class="card-booking">
           <h4 class="title-order-orange">Order this meal</h4>
           <%= simple_form_for [@meal, @booking] do |f| %>
           <%= f.input :date %>
-          <%= f.input :number_of_people %>
+          <%= f.input :number_of_people, collection: 1..@meal.max_person, prompt: "Select the number of servings you want" %>
           <%= f.submit "SUBMIT", class: "btn-order" %>
           <% end %>
         </div>
