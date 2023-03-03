@@ -412,7 +412,7 @@ user18 = User.new(
   address: '55 Rue Montmartre 75002 PARIS',
   password: "topsecret",
   password_confirmation: "topsecret",
-  admin: true
+  admin: false
 )
 user18.save!
 meal = Meal.new(
