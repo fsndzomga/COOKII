@@ -4,17 +4,17 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @review = Review.find(params[:id])
+    @review = Review.find(params[:booking_id])
     authorize @review
   end
 
   def edit
-    @review = Review.find(params[:id])
+    @review = Review.find(params[:booking_id])
     authorize @review
   end
 
   def update
-    @review = Review.find(params[:id])
+    @review = Review.find(params[:booking_id])
     authorize @review
 
     if @review.update(review_params)
