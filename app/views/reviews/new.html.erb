@@ -1,15 +1,19 @@
-<h1>Review your booking</h1>
+
+<div class="container my-5 w-50">
+
+
+<h2>Review your booking</h2>
 
 <div class="container">
   <div class="row">
     <div class="col-xs-4">
-      <%= simple_form_for @review do |f| %>
+      <%= simple_form_for [@booking, @review] do |f| %>
         <%= f.input :content %>
         <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
-        <%= f.submit "Send your review" %>
+        <%= f.submit "Send your review",  class:"btn-submit"%>
       <% end %>
     </div>
   </div>
 </div>
 
-<%= link_to 'Back home', bookings_path %>
+</div>

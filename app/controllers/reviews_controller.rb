@@ -25,15 +25,19 @@ class ReviewsController < ApplicationController
   end
 
   def new
+    @booking = Booking.find(params[:booking_id])
     @review = Review.new
+    @review.booking = @booking
     authorize @review
   end
 
   def create
     @review = Review.new(review_params)
+    @booking = Booking.find(params[:booking_id])
+    @review.booking = @booking
     authorize @review
     if @review.save
-      redirect_to @review, notice: 'Review was successfully created.'
+      redirect_to bookings_path, notice: 'Review was successfully created.'
     else
       flash[:alert] = "Something went wrong."
       render :new
