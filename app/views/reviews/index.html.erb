@@ -1,6 +1,5 @@
 <% @reviews.each do |review| %>
   <div>
-    <h2><%= link_to review.title, review %></h2>
     <p><%= review.content %></p>
     <p><%= review.rating %></p>
     <p><%= link_to 'Edit', edit_review_path(review) %></p>
