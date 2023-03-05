@@ -1,14 +1,14 @@
-Cookii
+# Cookii
 
 Welcome to Cookii, the peer-to-peer catering service that satisfies your cravings for delicious, homemade meals. Cookii connects you with talented local cooks who are passionate about food and love to share their creations with others.
 
-Getting Started
+## Getting Started
 
 To get started with Cookii, simply visit our meals page and browse our selection of mouthwatering dishes. You can search by cuisine, dietary requirements, or location to find the perfect meal for your taste buds.
 
 Once you've found a meal you like, simply place your order and wait for the cook to confirm. Once confirmed, you can arrange for pickup or delivery of your meal directly with the cook.
 
-Features
+## Features
 
 Browse a wide selection of homemade meals from talented local cooks
 Search by cuisine, dietary requirements, or location
@@ -25,7 +25,7 @@ Contributing
 
 We welcome contributions from anyone who is passionate about food and technology. If you have an idea for a new feature or improvement, please submit a pull request or open an issue on our GitHub repository.
 
-License
+## License
 
 Cookii is open source software licensed under the MIT license.
 
