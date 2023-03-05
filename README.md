@@ -21,7 +21,8 @@ Our customers love Cookii! Here's what some of them have to say:
 "My love language is food, prepping a meal and sharing it. Cookii connects me with wonderful people in my city and allows me to share my love of food with them." - Brigitte Macron
 "I’m not a great cook, and I’m often lazy… But I love homemade meals! With Cookii, I don't have to feel guilty about eating bad takeaway. And I get to meet talented cooks in my hometown 😊" - Anne-claire Coudray
 "There's nothing quite like the joy of discovering new flavors and ingredients in the kitchen. Cooking allows me to experiment with different tastes and textures, and to express my creativity through food." - Marion Cotillard
-Contributing
+
+## Contributing
 
 We welcome contributions from anyone who is passionate about food and technology. If you have an idea for a new feature or improvement, please submit a pull request or open an issue on our GitHub repository.
 
