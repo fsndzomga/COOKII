@@ -10,7 +10,7 @@ class Meal < ApplicationRecord
   # Search Bar
   include PgSearch::Model
   pg_search_scope :search_in_meal,
-  against: [:name, :description, :category],
+  against: %i[name description category],
   using: {
     tsearch: { prefix: true }
   }
@@ -18,7 +18,7 @@ class Meal < ApplicationRecord
 
   def attach_photo
     return if photo.attached?
-    self.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/cook.jpg')), filename: 'cook')
-  end
 
+    photo.attach(io: File.open(File.join(Rails.root, 'app/assets/images/cook.jpg')), filename: 'cook')
+  end
 end
